@@ -1,0 +1,9 @@
+[Unit]
+Description=Notify on local mail
+
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/bin/notify-on-localmail.py
+
+[Install]
+WantedBy=multi-user.target
