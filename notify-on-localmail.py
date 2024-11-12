@@ -43,7 +43,7 @@ def main():
     mail_file_copy_lock_path = mail_file_copy_path + '.lock'
     mail_file_path = '/var/mail/' + getpass.getuser()
 
-    if os.path.getmtime(mail_file_copy_path) >= os.path.getmtime(mail_file_path):
+    if os.path.isfile(mail_file_copy_path) and (os.path.getmtime(mail_file_copy_path) >= os.path.getmtime(mail_file_path)):
         logging.debug('No new mail')
         return
 
